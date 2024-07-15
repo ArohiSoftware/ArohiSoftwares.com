@@ -1,4 +1,4 @@
-// File: C:\Users\hp\Desktop\InT_Project\Website\HostingArohi\arohisoftware-website\src\app\leaders\page.tsx
+// File: C:\Users\hp\Desktop\InT_Project\Hosting\ArohiSoftwares.com\src\app\leaders\page.tsx
 import * as entry from '../../../../src/app/leaders/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
