@@ -12,11 +12,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/leaders/page": [
+    "/events/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/leaders/page.css",
-      "static/chunks/app/leaders/page.js"
+      "static/chunks/app/events/page.js"
     ]
   }
 }

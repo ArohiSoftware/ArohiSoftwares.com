@@ -24,7 +24,9 @@ function Navbar({ className }: { className?: string }) {
   };
 
   const toggleSubmenu = (submenu: string) => {
-    setActiveSubmenu((prevSubmenu) => (prevSubmenu === submenu ? null : submenu));
+    setActiveSubmenu((prevSubmenu) =>
+      prevSubmenu === submenu ? null : submenu
+    );
   };
 
   function stringToColor(string: string): string {
@@ -32,28 +34,31 @@ function Navbar({ className }: { className?: string }) {
     for (let i = 0; i < string.length; i++) {
       hash = string.charCodeAt(i) + ((hash << 5) - hash);
     }
-    let color = '#';
+    let color = "#";
     for (let i = 0; i < 3; i++) {
       const value = (hash >> (i * 8)) & 0xff;
-      color += ('00' + value.toString(16)).substr(-2);
+      color += ("00" + value.toString(16)).substr(-2);
     }
     return color;
   }
 
   function getInitials(name: string): string {
-    const names = name.split(' ');
-    const initials = names.map((n) => n[0]).join('');
+    const names = name.split(" ");
+    const initials = names.map((n) => n[0]).join("");
     return initials.toUpperCase();
   }
 
-  const userInitials = session?.user?.name ? getInitials(session.user.name) : '';
-  const bgColor = session?.user?.name ? stringToColor(session.user.name) : '#ccc';
+  const userInitials = session?.user?.name
+    ? getInitials(session.user.name)
+    : "";
+  const bgColor = session?.user?.name
+    ? stringToColor(session.user.name)
+    : "#ccc";
 
   return (
     <div className={cn("fixed top-0 inset-x-0 z-50 w-full", className)}>
       <nav className="bg-black w-full">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        
           <div className="lg:hidden sm:flex md:flex">
             {session?.user ? (
               <div className="relative">
@@ -67,15 +72,22 @@ function Navbar({ className }: { className?: string }) {
                   <div className="absolute lg:right-0 mt-2 w-50 bg-[#282828] shadow-md rounded-md">
                     <div className="flex space-x-3 p-4 pb-5">
                       <div className="flex items-center space-x-4">
-                        <button className="flex items-center justify-center w-10 h-10 rounded-full" style={{ backgroundColor: bgColor }}>
+                        <button
+                          className="flex items-center justify-center w-10 h-10 rounded-full"
+                          style={{ backgroundColor: bgColor }}
+                        >
                           <span className="text-white font-semibold">
                             {userInitials}
                           </span>
                         </button>
                       </div>
                       <div className="space-y-1">
-                        <p className="text-sm font-semibold">{session.user.name}</p>
-                        <p className="text-xs text-gray-500">{session.user.email}</p>
+                        <p className="text-sm font-semibold">
+                          {session.user.name}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {session.user.email}
+                        </p>
                       </div>
                     </div>
                     <div className="border-lg border-gray-200">
@@ -104,11 +116,15 @@ function Navbar({ className }: { className?: string }) {
 
           <div className="hidden lg:flex items-center justify-center flex-grow">
             <Menu setActive={setActive} className="flex lg:space-x-4 flex-row">
-              <MenuItem setActive={setActive} active={active} item="What we do >">
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="What we do >"
+              >
                 <div className="flex justify-around space-y-6 m-2 mx-10 lg:space-x-10">
                   <div className="flex flex-col lg:space-y-4 py-7">
                     <p className="mb-2 text-xl text-slate-400 hover:text-yellow-400 hover:cursor-text">
-                      What we do<span>➡️</span>
+                      What we do<span>➡</span>
                     </p>
                     <HoveredLink href="/service">
                       <span className="hover:border-b-4 animate-in hover:text-blue-400 border-neutral-100 border-y-gray-400">
@@ -139,13 +155,21 @@ function Navbar({ className }: { className?: string }) {
                 </div>
               </MenuItem>
               <Link href="/whatweThink" className="ml-2">
-                <MenuItem setActive={setActive} active={active} item="What we think" />
+                <MenuItem
+                  setActive={setActive}
+                  active={active}
+                  item="What we think"
+                />
               </Link>
-              <MenuItem setActive={setActive} active={active} item="What we are >">
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="What we are >"
+              >
                 <div className="flex justify-around space-y-6 lg:space-x-10 p-10 rounded">
                   <div className="flex flex-col space-y-4">
                     <p className="mb-2 text-xl text-slate-400 hover:text-yellow-400 hover:cursor-pointer">
-                      About Arohi Software <span>➡️</span>
+                      About Arohi Software <span>➡</span>
                     </p>
                     <HoveredLink href="/courses">
                       <span className="text-sm text-slate-400">
@@ -196,7 +220,7 @@ function Navbar({ className }: { className?: string }) {
                 <div className="flex justify-around space-y-6 space-x-10 p-10 rounded">
                   <div className="flex flex-col space-y-4">
                     <p className="mb-2 text-xl text-slate-400 hover:text-yellow-400 hover:cursor-text">
-                      Careers home <span>➡️</span>
+                      Careers home <span>➡</span>
                     </p>
                     <HoveredLink href="/courses">
                       <span className="text-sm text-slate-400 cursor-text">
@@ -254,7 +278,7 @@ function Navbar({ className }: { className?: string }) {
             </Menu>
           </div>
 
-             {/* Login button or profile button */}
+          {/* Login button or profile button */}
           <div className="hidden lg:flex px-8">
             {session?.user ? (
               <div className="relative">
@@ -266,29 +290,35 @@ function Navbar({ className }: { className?: string }) {
                 </button>
                 {isProfileMenuOpen && (
                   <div className="absolute lg:right-0 mt-2 w-50 bg-[#282828] shadow-md rounded-md">
-                  <div className="flex space-x-3 p-4 pb-5">
-                    <div className="flex items-center space-x-4">
-                      <button className="flex items-center justify-center w-10 h-10 rounded-full"
-                style={{ backgroundColor: bgColor }}>
-                      <span className="text-white font-semibold">
-                  {userInitials}
-                </span>
+                    <div className="flex space-x-3 p-4 pb-5">
+                      <div className="flex items-center space-x-4">
+                        <button
+                          className="flex items-center justify-center w-10 h-10 rounded-full"
+                          style={{ backgroundColor: bgColor }}
+                        >
+                          <span className="text-white font-semibold">
+                            {userInitials}
+                          </span>
+                        </button>
+                      </div>
+                      <div className=" space-y-1">
+                        <p className="text-sm font-semibold ">
+                          {session.user.name}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {session.user.email}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="border-lg border-gray-200">
+                      <button
+                        className="w-full text-left px-4 py-2 text-sm text-white bg-purple-600  hover:font-bold hover:bg-purple-800"
+                        onClick={() => signOut()}
+                      >
+                        Logout
                       </button>
                     </div>
-                    <div className=" space-y-1">
-                       <p className="text-sm font-semibold ">{session.user.name}</p>
-                    <p className="text-xs text-gray-500">{session.user.email}</p>
-                    </div>
                   </div>
-                  <div className="border-lg border-gray-200">
-                    <button
-                      className="w-full text-left px-4 py-2 text-sm text-white bg-purple-600  hover:font-bold hover:bg-purple-800"
-                      onClick={() => signOut()}
-                    >
-                      Logout
-                    </button>
-                  </div>
-                </div>
                 )}
               </div>
             ) : (
@@ -297,7 +327,6 @@ function Navbar({ className }: { className?: string }) {
               </Link>
             )}
           </div>
-
 
           <div className="lg:hidden">
             <button
@@ -324,11 +353,11 @@ function Navbar({ className }: { className?: string }) {
             <div>
               <button
                 className="text-white  text-left mb-4 w-full focus:outline-none"
-                onClick={() => toggleSubmenu('whatWeDo')}
+                onClick={() => toggleSubmenu("whatWeDo")}
               >
-                What we do {activeSubmenu === 'whatWeDo' ? '▲' : '▼'}
+                What we do {activeSubmenu === "whatWeDo" ? "▲" : "▼"}
               </button>
-              {activeSubmenu === 'whatWeDo' && (
+              {activeSubmenu === "whatWeDo" && (
                 <div className="pl-4 mt-2 space-y-2 text-righ">
                   <Link href="/service" onClick={handleLinkClick}>
                     <p className="text-gray-400">Services</p>
@@ -351,11 +380,11 @@ function Navbar({ className }: { className?: string }) {
             <div>
               <button
                 className="text-white text-left w-full focus:outline-none"
-                onClick={() => toggleSubmenu('whatWeAre')}
+                onClick={() => toggleSubmenu("whatWeAre")}
               >
-                What we are {activeSubmenu === 'whatWeAre' ? '▲' : '▼'}
+                What we are {activeSubmenu === "whatWeAre" ? "▲" : "▼"}
               </button>
-              {activeSubmenu === 'whatWeAre' && (
+              {activeSubmenu === "whatWeAre" && (
                 <div className="pl-4 mt-2 space-y-2 text-left">
                   <Link href="/leaders" onClick={handleLinkClick}>
                     <p className="text-gray-400">Leaders</p>
@@ -384,29 +413,47 @@ function Navbar({ className }: { className?: string }) {
             <div>
               <button
                 className="text-white text-left w-full focus:outline-none"
-                onClick={() => toggleSubmenu('careers')}
+                onClick={() => toggleSubmenu("careers")}
               >
-                Careers {activeSubmenu === 'careers' ? '▲' : '▼'}
+                Careers {activeSubmenu === "careers" ? "▲" : "▼"}
               </button>
-              {activeSubmenu === 'careers' && (
+              {activeSubmenu === "careers" && (
                 <div className="pl-4 mt-2 space-y-2 text-left">
-                  <Link href="/training" onClick={handleLinkClick}>
+                  <Link href="/courses" onClick={handleLinkClick}>
                     <p className="text-gray-400">Training & Internships</p>
                   </Link>
                   <Link href="/careers" onClick={handleLinkClick}>
                     <p className="text-gray-400">Careers</p>
                   </Link>
-                  <Link href="/campus" onClick={handleLinkClick}>
-                    <p className="text-gray-400">Campus Hiring</p>
+                  <Link href="/courses" onClick={handleLinkClick}>
+                    <p className="text-gray-400">Training & Development</p>
                   </Link>
+                  <Link href="/experienceProf" onClick={handleLinkClick}>
+                    <p className="text-gray-400">Experience Professionals</p>
+                  </Link>
+                  <Link href="/worken" onClick={handleLinkClick}>
+                    <p className="text-gray-400">Work environment</p>
+                  </Link>
+                  <Link href="/courses" onClick={handleLinkClick}>
+                    <p className="text-gray-400">Find Jobs</p>
+                  </Link>
+                 
                   <Link href="/jobs" onClick={handleLinkClick}>
-                    <p className="text-gray-400">Jobs</p>
+                    <p className="text-gray-400"> Search All Jobs</p>
+                  </Link>
+                  
+                 
+                  <Link href="/contact" onClick={handleLinkClick}>
+                    <p className="text-gray-400">Contact Us</p>
+                  </Link>
+                  <Link href="/faq" onClick={handleLinkClick}>
+                    <p className="text-gray-400">FAQ</p>
                   </Link>
                 </div>
               )}
             </div>
-             </div>
-              </div>
+          </div>
+        </div>
       )}
     </div>
   );

@@ -32,20 +32,13 @@ const SharedButton: React.FC<SharedButtonProps> = ({ className, children }) => (
 
 const event = [
   {
-    title: "FutureFest 2024: Unleashing Tomorrow's Innovations",
-    date: "February 3, 2024",
-    time: "10:00 AM - 8:00 PM",
+    title: "Theta Network 2024 Hackathon",
+    date: "Coming Soon",
+   
     address: "Pune, Maharashtra",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repellat obcaecati commodi! Aperiam itaque ad, facere quaerat eum, provident rerum beatae obcaecati laudantium incidunt ipsum ipsa neque.",
-    imageUrl: "https://images.unsplash.com/photo-1559223607-b4d0555ae227?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    title: "FutureFest 2024: Unleashing Tomorrow's Innovations",
-    date: "February 3, 2024",
-    time: "10:00 AM - 8:00 PM",
-    address: "Pune, Maharashtra",
-    description: "Quaerat beatae excepturi rem amet placeat dolor perferendis, id aut error voluptatem ratione?. Perspiciatis dicta. Maxime dolores, atque accusantium molestias assumenda, explicabo, consequatur nemo distinctio dolore ex fugiat quis quidem natus iusto!",
-    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    description: "Theta Hackathon is a competition that challenges participants to build innovative solutions using Theta Network technologies. The goal of the hackathon is to foster innovation and collaboration in the blockchain and video streaming industries by encouraging developers, entrepreneurs, and blockchain enthusiasts to create new and exciting applications. ",
+    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0."
+
   }
 ]
 function EventPage() {
@@ -85,7 +78,7 @@ function EventPage() {
         </Carousel>
       </div>
 
-      <h1 className='text-black mt-12 lg:mt-56 text-center text-5xl font-thin'>UPCOMING EVENTS 🎉</h1>
+      <h1 className='text-black mt-12 lg:mt-56 text-center text-5xl font-thin'>UPCOMING hackathons 🎉</h1>
 
       <div className='w-[90vw] mx-auto mt-12 lg:mt-44'>
         {event.map((event, i) => (
@@ -115,15 +108,15 @@ function EventPage() {
 interface EventProps {
   title: string;
   date: string;
-  time: string;
+  //time: string;
   address: string;
   description: string;
   imageUrl: string;
 }
 
-const Event: React.FC<EventProps> = ({ title, date, time, address, description, imageUrl }) => (
+const Event: React.FC<EventProps> = ({ title, date,address, description, imageUrl }) => (
   <div className="mt-12 relative   transition-all bg-gradient-to-br w-fit from-violet-400 to-orange-300  p-0">
-    <div className="lg:w-[80vw] mx-auto transition-all backdrop-blur-xl flex flex-col text-black md:flex-row bg-[#39393a] opacity-35 p-6">
+    <div className="lg:w-[90vw] mx-auto transition-all backdrop-blur-xl flex flex-col text-black md:flex-row bg-[#f59feb] opacity-100 p-6">
       <div className="md:w-1/2">
         <img src={imageUrl} className="object-cover w-full h-full" alt={title} />
       </div>
@@ -133,24 +126,22 @@ const Event: React.FC<EventProps> = ({ title, date, time, address, description, 
           <span className="mr-2">📅</span>
           <p className="text-lg">{date}</p>
         </div>
-        <div className="flex items-center mb-4">
+       {/* <div className="flex items-center mb-4">
           <span className="mr-2">⏰</span>
           <p className="text-lg">{time}</p>
-        </div>
+        </div>*/}
         <div className="flex items-center mb-4">
           <span className="mr-2">📍</span>
           <p className="text-lg">{address}</p>
         </div>
         <p className="mb-4">{description}</p>
         <div className=" w-fit from-violet-400 rounded-lg to-orange-300 p-2">
-          <button className="self-start bg-black text-white px-6 py-2 rounded-md">GET A TICKET</button>
+          <button className="self-start bg-black text-white px-6 py-2 rounded-md">Participate Now</button>
         </div>
       </div>
       
     </div>
-    <div className="bg-gradient-to-br absolute top-56 lg:left-96 left-20 w-fit from-violet-400 rounded-lg to-orange-300 p-2">
-          <button className="self-start bg-black text-white lg:px-8 py-6   rounded-md text-4xl">Upcomming</button>
-        </div>
+   
     
   </div>
 );
