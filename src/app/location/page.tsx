@@ -58,7 +58,7 @@ const LocationPage = () => {
           <div className="hover:bg-gradient-to-br p-[2px] from-violet-400 to-orange-300 w-full md:w-1/2">
             <button className="group w-full text-left border rounded-md flex justify-between items-center p-5 bg-white text-black" onClick={() => handleLocationChange(19.0945, 74.7381)}>
               <div>
-                <h3 className="text-2xl">Arohi Software Development, near Sai hospital building, bhairavnath chawk, Shrigoanda, Maharashtra</h3>
+                <h3 className="text-2xl">Arohi Software, Sai hospital building, bhairavnath chawk, Shrigoanda, Ahmednagar,Maharashtra</h3>
                 
               </div>
               <ArrowRightIcon className="scale-150 transition-all -translate-x-6 group-hover:-translate-x-2" />
