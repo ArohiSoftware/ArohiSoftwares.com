@@ -11,13 +11,23 @@ const Leadership = () => {
     },
     {
       name: 'Poonam Digole',
-      title: 'Project Manager',
+      title: 'Senior Manager',
       image: '/assets/Leaders/poonam.jpg',
     },
     {
       name: 'Vivek Shejole',
-      title: 'Lead - Strategy',
+      title: 'Project Manager',
       image: '/assets/Leaders/vivek.jpeg',
+    },
+    {
+      name: 'Anuruddh Singh',
+      title: 'Tech Lead',
+      image: '/assets/Leaders/anuruddh.jpg',
+    },
+    {
+      name: 'Siddhesh Rajale',
+      title: 'Devrel',
+      image: '/assets/Leaders/siddhesh.jpg',
     },
   ];
 
