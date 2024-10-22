@@ -33,7 +33,7 @@ const Leadership = () => {
     {
       name: 'Sahil Chaudhary ',
       title: 'Project Lead',
-      image: '/assets/Leaders/sahil sir.jpg',
+      image: '/assets/Leaders/sahil.jpg',
     },
 
   ];
