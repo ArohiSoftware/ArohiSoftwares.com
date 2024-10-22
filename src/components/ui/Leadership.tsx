@@ -12,23 +12,30 @@ const Leadership = () => {
     {
       name: 'Poonam Digole',
       title: 'Senior Manager',
-      image: '/assets/Leaders/poonam.jpg',
+      image: '/assets/Leaders/mam.jpg',
     },
     {
       name: 'Vivek Shejole',
       title: 'Project Manager',
       image: '/assets/Leaders/vivek.jpeg',
     },
+   
+    {
+      name: 'Siddhesh Rajale',
+      title: 'Assistant Manager',
+      image: '/assets/Leaders/siddhesh.jpg',
+    },
     {
       name: 'Anuruddh Singh',
-      title: 'Tech Lead',
+      title: 'Project Lead',
       image: '/assets/Leaders/anuruddh.jpg',
     },
     {
-      name: 'Siddhesh Rajale',
-      title: 'Devrel',
-      image: '/assets/Leaders/siddhesh.jpg',
+      name: 'Sahil Chaudhary ',
+      title: 'Project Lead',
+      image: '/assets/Leaders/sahil sir.jpg',
     },
+
   ];
 
   const ceo = leaders[0];
@@ -90,6 +97,7 @@ const Leadership = () => {
       </div>
 
       
+     
     </div>
   );
 };
