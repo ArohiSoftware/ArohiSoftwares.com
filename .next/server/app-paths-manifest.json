@@ -1,1 +1,4 @@
-{}
+{
+  "/ProjectPortfolio/page": "app/ProjectPortfolio/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+}

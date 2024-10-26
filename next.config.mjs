@@ -11,6 +11,7 @@ const nextConfig = {
       'media.istockphoto.com',
       'cdn-icons-png.flaticon.com',
       'd34u8crftukxnk.cloudfront.net',
+      'res.cloudinary.com'
       
     ],
     remotePatterns: [
