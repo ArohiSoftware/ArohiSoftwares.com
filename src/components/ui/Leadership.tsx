@@ -21,13 +21,13 @@ const Leadership = () => {
     },
     {
       name: 'Anuruddh Singh',
-      title: 'Tech Lead',
+      title: 'Project Lead',
       image: '/assets/Leaders/anuruddh.jpg',
     },
     {
-      name: 'Siddhesh Rajale',
-      title: 'Devrel',
-      image: '/assets/Leaders/siddhesh.jpg',
+      name: 'Sahil Chaudhary ',
+      title: 'Project Lead',
+      image: '/assets/Leaders/sahil.jpg',
     },
   ];
 
